@@ -33,10 +33,35 @@ public class Main {
                     // выполнение кманды 1
                     break;
                 case 2:
+                    System.out.println("Введите имя для поиска");
+                    String namefind = s.next();
+                    int[] found = book1.find(namefind);
+                    for (int i = 0;i<found.length;i++){
+                        System.out.println(book1.list[found[i]]);
+
+                    }
+                    if (found.length == 0) {
+                        System.out.println("Ничего не найдено");
+
+                    }
+
+
                 // выполнение команды 2
                     break;
                 case 3:
                     book1.printAll();
+                    break;
+
+                case 4:
+                    System.out.println("Введите индекс записи");
+                    int indexDelete = s.nextInt();
+                    book1.delete(indexDelete);
+
+
+                    break;
+                case 5:
+
+
                     break;
                 case 6:
                     return;
@@ -60,3 +85,8 @@ public class Main {
 //        book1.printAll();
     }
 }
+// проверять индекс
+// выводить индекс
+// сохраниение и чтение из файла
+//
+

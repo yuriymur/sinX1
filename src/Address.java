@@ -12,6 +12,18 @@ public class Address {
         this.mail = mail;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
     @Override
     public String toString() {
         return "name = " + name + ", phone = " + phone + ",mail = " + mail  ;

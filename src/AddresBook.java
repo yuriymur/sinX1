@@ -15,7 +15,36 @@ public class AddresBook {
             System.out.println(list [i]);
 
         }
-            ;
+}
+    int[] find(String namefind){
+        int resultCount = 0;
+
+        for (int i = 0; i<count;i++) {
+            if (list[i].getName().startsWith(namefind)) {
+                resultCount++;
+            }
+        }
+        int []result = new int[resultCount];
+        int found = 0;
+        for (int i = 0; i<count;i++) {
+            if (list[i].getName().startsWith(namefind)) {
+                //resultCount++;
+                result[found] = i;
+                found++;
+            }
+        }
+        return result;
+    }
+    void delete(int index){
+        for (int i = index+1; i < count; i++){
+            list[i-1] = list[i];
+            list[count-1] = null;
+            count--;
+
+
 
     }
+
+    }
+
 }
