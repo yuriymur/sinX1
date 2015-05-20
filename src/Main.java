@@ -70,6 +70,7 @@ public class Main {
                 case 6:
                     return;
                 default:
+                    System.out.println("Введеная команда не распоннана.\nВведите число от 1 до 6");
                     break;
             }
 
