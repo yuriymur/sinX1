@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -21,45 +22,48 @@ public class Main {
                 case 1 :
                     System.out.println("Ввведите имя");
                     String name = s.next();
-//                    book1.add ();
-
                     System.out.println("Ввведите телефон");
                     String phone = s.next();
-
                     System.out.println("Ввведите почтовый адрес");
                     String mail = s.next();
                     Address newaddr = new Address(name,phone,mail);
                     book1.add(newaddr);
-                    // выполнение кманды 1
                     break;
+
                 case 2:
                     System.out.println("Введите имя для поиска");
                     String namefind = s.next();
                     int[] found = book1.find(namefind);
                     for (int i = 0;i<found.length;i++){
-                        System.out.println(book1.list[found[i]]);
-
+                        int index = found[i];
+                        System.out.println(index + ". " + book1.list[index]);
                     }
                     if (found.length == 0) {
                         System.out.println("Ничего не найдено");
-
                     }
-
-
-                // выполнение команды 2
                     break;
+
                 case 3:
                     book1.printAll();
                     break;
 
                 case 4:
-                    System.out.println("Введите индекс записи");
+                    System.out.println("Введите индекс удаляемой записи");
                     int indexDelete = s.nextInt();
                     book1.delete(indexDelete);
-
-
                     break;
                 case 5:
+                    System.out.println("Введите индекс изменяемой записи");
+                    int indexChange = s.nextInt();
+
+                    System.out.println("Ввведите имя");
+                    String namech = s.next();
+                    System.out.println("Ввведите телефон");
+                    String phonech = s.next();
+                    System.out.println("Ввведите почтовый адрес");
+                    String mailch = s.next();
+                    Address AddrChange = new Address(namech,phonech,mailch);
+                    book1.change(indexChange,AddrChange);
 
 
                     break;

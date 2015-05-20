@@ -12,10 +12,9 @@ public class AddresBook {
     }
     void printAll(){
         for (int i = 0;i<count;i++){
-            System.out.println(list [i]);
-
+            System.out.println(i + ". " + list[i]);
         }
-}
+    }
     int[] find(String namefind){
         int resultCount = 0;
 
@@ -40,10 +39,10 @@ public class AddresBook {
             list[i-1] = list[i];
             list[count-1] = null;
             count--;
-
-
-
+        }
     }
+    void change(int index,Address newAdressC){
+        list[index] =  newAdressC;
 
     }
 
